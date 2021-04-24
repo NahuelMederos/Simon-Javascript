@@ -25,9 +25,22 @@ function nextSequence(){
     var randomChosenColour = buttonColors[randomNumber];
 
     gamePattern.push(randomChosenColour);
-
-    $("#" + randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
-    playSound(randomChosenColour);
+    if(gamePattern.length > 1){
+        for(var i=0; i < gamePattern.length; i++){
+            var x = 0;
+            setTimeout(function(){
+                $("#" + gamePattern[x]).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+                playSound(gamePattern[x]);
+                x++;
+            },i * 1000);               
+        }
+        
+    }else{
+        $("#" + randomChosenColour).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
+        playSound(randomChosenColour);
+    }
+    
+    
     level++;
 }
 
