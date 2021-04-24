@@ -32,7 +32,7 @@ function nextSequence(){
                 $("#" + gamePattern[x]).fadeOut(100).fadeIn(100).fadeOut(100).fadeIn(100);
                 playSound(gamePattern[x]);
                 x++;
-            },i * 1000);               
+            },i * 550);               
         }
         
     }else{
